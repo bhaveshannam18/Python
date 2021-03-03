@@ -1,0 +1,30 @@
+import re
+f = open("test.txt", "r")
+s = f.read()
+match=re.findall(r"\d{4}[-\.\s]\d{4}",s)
+match0=re.findall(r'\d{3}[-\.\s]\d{4}[-\.\s]\d{4}',s)
+match1 = re.findall(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}",s)
+print(match)
+print(match0)
+print(match1)
+f.close()
+
+
+
+
+for number0 in match0:
+     ft=open("asd.txt","a")
+     ft.write(number0)
+     ft.write("\t")
+
+ft.write("\n")
+for number in match:
+     ft=open("asd.txt","a")
+     ft.write(number)
+     ft.write("\t")
+ft.write("\n")
+for email in match1:
+ ft=open("asd.txt","a")
+ ft.write(email)
+ ft.write("\t")
+ft.close()
